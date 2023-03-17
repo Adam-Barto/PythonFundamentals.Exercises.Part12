@@ -45,11 +45,16 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
 
 def gen_set(val_in: str) -> Set:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    Takes a string an outputs each character in a set, but not if it is a uppercase.
+    All the characters are made uppercase when piut into the set.
+    This also shows how sets are not sorted
 
     :param val_in:
     :return:
     """
-    pass
+    new_set = set()
+    for (c, v) in enumerate(val_in):
+        if val_in[c].islower():
+            new_set.add(val_in[c].upper())
+
+    return new_set
